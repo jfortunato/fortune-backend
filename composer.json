@@ -1,0 +1,27 @@
+{
+    "name": "fortune/backend",
+    "type": "project",
+    "description": "Kickstart a RESTful backend for your Javascript application",
+    "keywords": [
+        "rest",
+        "api",
+        "javascript",
+        "backend"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Justin Fortunato",
+            "email": "jfortunato25@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "fortune/fortune": "dev-develop",
+        "slim/slim": "~2.0",
+        "symfony/yaml": "~2.0"
+    },
+    "config": {
+        "vendor-dir": "backend/vendor"
+    }
+}

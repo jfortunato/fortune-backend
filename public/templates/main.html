@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fortune Backend</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+
+        <div class="strip"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Get Started</h2>
+                    <hr />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-warning">
+                        This configuration has already been setup as a demo. Navigate to <a href="/dogs">/dogs</a> to see it in action.
+                    </div>
+                    <h4>Configuring Resources</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Adding your resources to <code>backend/config/resources.yml</code>...</p>
+<pre>
+# resources.yml
+---
+
+dogs: ~
+
+puppies:
+    parent: dogs
+</pre>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-right">...will produce the following RESTful routes</p>
+<pre>
+# dogs                          # puppies
+---                             ---
+GET    /dogs                    GET    /dogs/:dog_id/puppies
+GET    /dogs/:id                GET    /dogs/:dog_id/puppies/:id
+POST   /dogs                    POST   /dogs/:dog_id/puppies
+PUT    /dogs/:id                PUT    /dogs/:dog_id/puppies/:id
+DELETE /dogs/:id                DELETE /dogs/:dog_id/puppies/:id
+</pre>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Setup Database</h4>
+                    <p>You can use any database supported by <a href="http://php.net/manual/en/book.pdo.php">PHP PDO</a>, including MySQL. To keep things simple, this demo has setup an SQLite database located at <code>backend/config/database/db.sqlite</code>. You can use any sqlite administration tool to directly edit the database schema.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Build Your Application</h2>
+                    <hr />
+                    <p>If you are building a single page application using javascript, you can start to build your frontend. You will most likely start by replacing this file, which is located at <code>public/templates/main.html</code> with whatever your app requires.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <footer class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <p>Code licensed under MIT. Please feel free to report any issues or submit pull requests.</p>
+                    <p>&copy; 2014 Justin Fortunato</p>
+                    <ul>
+                        <li><a href="https://github.com/jfortunato/fortune">Fortune API</a> |</li>
+                        <li><a href="https://github.com/jfortunato/fortune-backend">Fortune Backend</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    </body>
+</html>
